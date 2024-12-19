@@ -9,13 +9,13 @@ def run_powershell_command(command):
         result = subprocess.run(["powershell", "-Command", command], capture_output=True, text=True)
         
         if result.returncode == 0:
-            print("Kết quả:")
+            print("Result:")
             print(result.stdout)
         else:
-            print("Lỗi:")
+            print("Error:")
             print(result.stderr)
     except Exception as e:
-        print(f"Có lỗi xảy ra: {e}")
+        print(f"Error occur: {e}")
 
 def remove_folders_keep_files(directory):
     for item in os.listdir(directory):
